@@ -19,7 +19,7 @@ Route::get('/', [
 
 
 
-Route::group(['prefix'=>'user'],function(){
+
 
 Route::group(['middleware'=>'guest'],function(){
 
@@ -69,7 +69,7 @@ Route::get('/logout',[
 });
 
 
-});
+
 
 Route::get('/add-to-cart{id}',[
 
@@ -113,6 +113,51 @@ Route::post('/checkout',[
   'as' => 'checkout',
   'middleware' => 'auth'
 	]);
+
+
+
+
+
+
+
+
+
+
+Route::get('/admin/signup',[
+
+  'uses' => 'AdminController@getSignUp',
+  'as' => 'adminsignup'
+  
+  
+
+  ]);
+Route::post('/admin/signup',[
+  'uses' => 'AdminController@postSignUp',
+  'as' => 'adminsignup'
+  
+  ]);
+Route::get('/admin/signin',[
+
+  'uses' => 'AdminController@getSignIn',
+  'as' => 'adminsignin'
+  
+
+  ]);
+Route::post('/admin/signin',[
+  'uses' => 'AdminController@postSignIn',
+  'as' => 'adminsignin'
+  
+  ]);
+
+
+
+Route::get('/admin/dashboard',[
+  'uses' => 'AdminController@getDashboard',
+  'as' => 'dashboard',
+  'middleware' => 'auth', 
+  ]);
+
+
 
 
 	
