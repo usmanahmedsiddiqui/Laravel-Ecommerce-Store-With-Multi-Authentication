@@ -17,11 +17,24 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        // if (Auth::guard($guard)->check()) {
             
-            return redirect()->route('product.index');
+        //     return redirect()->route('product.index');
+        // }
+        switch ($guard) {
+            case 'admin':
+                if(Auth::guard($guard)->check()){
+                    return redirect()->route('dashboard');
+                }
+                break;
+            
+            default:
+               if(Auth::guard($guard)->check()){
+                  return redirect()->route('product.index');
+                break;
         }
 
         return $next($request);
     }
+}
 }

@@ -1,26 +1,17 @@
 @extends('layouts.master')
 
 @section('title')
-Viscos Website
+Viscous - Login
 @endsection
-
-
-
 
 @section('content')
 
 <div class="banner-top">
 	<div class="container">
 		<h1>Login</h1>
-		<em></em>
 		<h2><a href="{{route('product.index')}}">Home</a><label>/</label>Login</h2>
 	</div>
 </div>
-
-
-
-
-
 
 <div class="container">
 		<div class="login">
@@ -32,11 +23,21 @@ Viscos Website
 @endforeach
 </div>
 @endif
+
+@if(Session::has('message'))
+<div class="alert alert-danger">
+
+<p>{{Session::get('message')}}</p>
+
+</div>
+@endif
+
+
 		
 			<form action="{{route('user.signin')}}" method="post">
 			<div class="col-md-6 login-do">
 				<div class="login-mail">
-					<input type="text" placeholder="Email" id="email" name="email">
+					<input type="text" placeholder="Email" id="email" name="email" value="{{Request::old('email')}}">
 					<i  class="glyphicon glyphicon-envelope"></i>
 				</div>
 				<div class="login-mail">
@@ -51,10 +52,9 @@ Viscos Website
 				{{csrf_field()}}
 			</div>
 			<div class="col-md-6 login-right">
-				 <h3>Completely Free Account</h3>
+				 <h3>If you don't have an account with us, Please Register.</h3>
 				 
-				 <p>Pellentesque neque leo, dictum sit amet accumsan non, dignissim ac mauris. Mauris rhoncus, lectus tincidunt tempus aliquam, odio 
-				 libero tincidunt metus, sed euismod elit enim ut mi. Nulla porttitor et dolor sed condimentum. Praesent porttitor lorem dui, in pulvinar enim rhoncus vitae. Curabitur tincidunt, turpis ac lobortis hendrerit, ex elit vestibulum est, at faucibus erat ligula non neque.</p>
+				 <p>Viscous.co is an entity giving hope to the up-coming era of development through not just as our remarkable work in all fields through additive manufacturing and 3D printing technology but also as a proud innovational company. Viscous.co offers the best blend of advancements, profound industry skill and the most adaptable executional choices to meet our client’s needs with customized solutions. We are brand trusted by driving producers, pivotal planners, creators, scholars, researchers and practitioners.</p>
 				<a href="{{route('user.signup')}}" class=" hvr-skew-backward">Register</a>
 
 			</div>
@@ -68,34 +68,4 @@ Viscos Website
 
 <div style="margin-bottom:10px;"></div>
 
-
-
-
-
-
-
-
-
-
-
-	<!-- <form action="{{route('user.signin')}}" method="post">
-  <div class="form-group">
-<label for="email">Email</label>
-<input type="text" class="form-control" id="email" name="email">
-  </div>
-
-
-<div class="form-group">
-<label for="password">Password</label>
-<input type="password" class="form-control" id="password" name="password">
-  </div>
-  <button type="submit" class="btn btn-primary">Sign In</button>
-
-    {{csrf_field()}}
-
-	</form>
-	<p>Don't have an account?<a href="{{route('user.signup')}"><i>Sign Up</i></a></p>
-
-</div>
-</div> -->
 @endsection

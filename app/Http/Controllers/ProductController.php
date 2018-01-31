@@ -9,10 +9,15 @@ use Stripe\Stripe;
 use Stripe\Charge;
 use App\Order;
 use Auth;
+use App\Category;
+use App\SubCategory;
+use DB;
+use App\file;
+use Illuminate\Support\Facades\Input;
 class ProductController extends Controller
 {
     public function getIndex(){
-    	$products = Product::all();
+    	$products = Product::all()->random(4);
     	return view('shop.index',['products' =>$products]);
     }
 
@@ -26,7 +31,7 @@ class ProductController extends Controller
 
              $request->session()->put('cart',$cart);
             
-             return redirect()->route('product.index');
+             return redirect()->back();
     }
 
     public function getReduceByOne($id){
@@ -65,7 +70,7 @@ class ProductController extends Controller
 
     	$oldCart = Session::get('cart');
     	$cart = new Cart($oldCart);
-    	return view('shop.shopping-cart',['products'=>$cart->items,'totalPrice'=>$cart->totalPrice]);
+    	return view('shop.shopping-cart',['products'=>$cart->items,'totalPrice'=>$cart->totalPrice,'discountPrice'=>$cart->discountPrice]);
     }
 
 
@@ -121,6 +126,53 @@ class ProductController extends Controller
     	}
     	Session::forget('cart');
     	return redirect()->route('product.index')->with('success','Successfully purchased products!');
+
+    }
+
+    public function getProduct(){
+     $products = Product::all();
+     return view('admin.product',['products' =>$products]);
+    }
+
+    public function addProduct(){
+      $items = Category::all(['cat_id', 'cat_name']);
+      $sub_items = SubCategory::all(['sub_cat_id','sub_cat_name','parent_id']);
+      return view('admin.addproduct',compact('items',$items),compact('sub_items',$sub_items));
+
+    }
+    public function postaddProduct(Request $request){
+    $product  = new Product;
+    $product->title =$product_name= $request->input('title');
+    $product->description =$request->input('description');
+    $product->price =$request->input('price');
+    $product->cat_id =$request->input('cat_id');
+    $product->sub_cat_id =$request->input('sub_cat_id');
+
+    if($product->sub_cat_id==null){
+      $product->sub_cat_id = 0;
+    }
+
+    if(Input::hasFile('image')){
+
+             $file = Input::file('image');
+             $file->move(public_path(). '/', $file->getClientOriginalName());
+             $product->imagepath = $file->getClientOriginalName();
+
+    }
+         
+
+   $check_product = DB::table('product')
+   ->where('title',$product_name)
+   ->count();
+   if($check_product>0){
+
+            return redirect()->route('admin.getproduct')->with('error','Category name already exist');
+        } else {
+            $product->save();
+              return redirect()->route('admin.getproduct')->with('success','Successfully added category');
+        
+   }
+      
 
     }
 }

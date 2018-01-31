@@ -9,6 +9,8 @@ class Cart
    public $items = null;
    public $totalQty=0;
    public $totalPrice = 0;
+   public $discountPrice=0;
+   public $discount =0;
 
 
    public function __construct($oldCart){
@@ -16,6 +18,7 @@ class Cart
             	$this->items = $oldCart->items;
             	$this->totalQty =$oldCart->totalQty;
             	$this ->totalPrice = $oldCart->totalPrice;
+               $this->discountPrice = $oldCart->discountPrice;
             }
 
    }
@@ -34,6 +37,15 @@ class Cart
       $this ->totalQty++;
       $this ->totalPrice += $item->price;
 
+      if($this->totalPrice>200000){
+         $discount = ($this->totalPrice/100)*5;
+         $this->discountPrice = $this->totalPrice-$discount;
+
+      }
+      else{
+         $this->discountPrice = $this->totalPrice;
+      }
+
 
    }
 
@@ -44,6 +56,14 @@ class Cart
       $this->items[$id]['price'] -= $this->items[$id]['item']['price'];
       $this->totalQty--;
       $this->totalPrice -= $this->items[$id]['item']['price'];
+      if($this->totalPrice>200000){
+         $discount = ($this->totalPrice/100)*5;
+         $this->discountPrice = $this->totalPrice-$discount;
+      }
+      else{
+         $this->discountPrice = $this->totalPrice;
+      }
+
       if($this->items[$id]['qty']<=0){
          unset($this->items[$id]);
       }

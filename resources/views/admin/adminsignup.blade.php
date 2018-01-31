@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html>
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -43,4 +43,4 @@
 
 <div style="margin-bottom:10px;"></div>
 </body>
-</html>
+</html> -->

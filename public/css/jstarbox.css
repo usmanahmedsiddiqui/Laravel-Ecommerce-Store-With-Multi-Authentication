@@ -28,8 +28,6 @@
 	background-repeat: no-repeat;
 }
 
-
-/* Override with your own image and size… */
 .starbox .stars .star_holder .star {
 	background-image: url('https://github.com/sabberworm/jStarbox/raw/master/images/5-small.png');
 	width:17px;
@@ -44,12 +42,11 @@
 	margin: 0 0 0 0.5em;
 	font-size: 0.875em;
 }
-/* Override with your own colours… */
 .starbox .stars { background: #b0b0b0; }
 .starbox .rated .stars { background: #b0b0b0; }
 .starbox .rated.hover .stars { background: #b0b0b0; }
-.starbox .colorbar { background: #F67777; }
-.starbox .hover .colorbar { background: #F67777; }
-.starbox .rated .colorbar { background: #F67777; }
-.starbox .rated.hover .colorbar { background: #F67777; }
-.starbox .ghost { background: #F67777; }
+.starbox .colorbar { background: #597dc1; }
+.starbox .hover .colorbar { background: #597dc1; }
+.starbox .rated .colorbar { background: #597dc1; }
+.starbox .rated.hover .colorbar { background: #597dc1; }
+.starbox .ghost { background: #597dc1; }

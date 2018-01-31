@@ -1,19 +1,24 @@
 @extends('layouts.master')
 
 @section('title')
-Viscos Website
+Viscous - Checkout
 @endsection
-
-
-
 
 @section('content')
 
+<div class="banner-top">
+	<div class="container">
+		<h1>Checkout</h1>
+		<h2><a href="{{route('product.index')}}">Home</a><label>/</label>Checkout</h2>
+	</div>
+</div>
+<br><br>
+
 <div class="row">
 	<div class="col-sm-6 col-md-4 col-md-offset-4 col-sm-offset-3">
-      <h1>Checkout</h1>
-      <h4>Your Total : ${{$total}}</h4>
-
+      <br>
+      <h4>Your Total : RS {{$total}}</h4>
+<br>
       <div id="charge-error" class="alert alert-danger {{!Session::has('error')? 'hidden' : ''}}">
 {{Session::get('error')}}
 
@@ -85,7 +90,7 @@ Viscos Website
      {{csrf_field()}}
      <button type="submit" class="btn btn-success">Buy Now</button>
     
-
+<br><br><br>
 
 
 

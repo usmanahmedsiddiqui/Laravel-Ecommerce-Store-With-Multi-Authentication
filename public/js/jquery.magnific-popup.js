@@ -1,19 +1,5 @@
-/*! Magnific Popup - v0.9.9 - 2013-11-15
-* http://dimsemenov.com/plugins/magnific-popup/
-* Copyright (c) 2013 Dmitry Semenov; */
 ;(function($) {
 
-/*>>core*/
-/**
- * 
- * Magnific Popup Core JS file
- * 
- */
-
-
-/**
- * Private static constants
- */
 var CLOSE_EVENT = 'Close',
 	BEFORE_CLOSE_EVENT = 'BeforeClose',
 	AFTER_CLOSE_EVENT = 'AfterClose',
@@ -28,10 +14,7 @@ var CLOSE_EVENT = 'Close',
 	PREVENT_CLOSE_CLASS = 'mfp-prevent-close';
 
 
-/**
- * Private vars 
- */
-var mfp, // As we have only one instance of MagnificPopup object, we define it locally to not to use 'this'
+var mfp,
 	MagnificPopup = function(){},
 	_isJQ = !!(window.jQuery),
 	_prevStatus,
@@ -43,9 +26,6 @@ var mfp, // As we have only one instance of MagnificPopup object, we define it l
 	_currPopupType;
 
 
-/**
- * Private functions
- */
 var _mfpOn = function(name, f) {
 		mfp.ev.on(NS + name + EVENT_NS, f);
 	},
@@ -69,7 +49,6 @@ var _mfpOn = function(name, f) {
 		mfp.ev.triggerHandler(NS + e, data);
 
 		if(mfp.st.callbacks) {
-			// converts "mfpEventName" to "eventName" callback and triggers it if it's present
 			e = e.charAt(0).toLowerCase() + e.slice(1);
 			if(mfp.st.callbacks[e]) {
 				mfp.st.callbacks[e].apply(mfp, $.isArray(data) ? data : [data]);
@@ -83,7 +62,6 @@ var _mfpOn = function(name, f) {
 		}
 		return mfp.currTemplate.closeBtn;
 	},
-	// Initialize Magnific Popup only when called at least once
 	_checkInstance = function() {
 		if(!$.magnificPopup.instance) {
 			mfp = new MagnificPopup();
@@ -91,7 +69,6 @@ var _mfpOn = function(name, f) {
 			$.magnificPopup.instance = mfp;
 		}
 	},
-	// CSS transition detection, http://stackoverflow.com/questions/7264899/detect-css-transitions-using-javascript-and-without-modernizr
 	supportsTransitions = function() {
 		var s = document.createElement('p').style, // 's' for style. better to create an element if body yet to exist
 			v = ['ms','O','Moz','Webkit']; // 'v' for vendor

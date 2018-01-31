@@ -2,56 +2,39 @@
   <div class="footer-middle">
         <div class="container">
           <div class="col-md-3 footer-middle-in">
-            <a href="index.html"><img src="images/log.png" alt=""></a>
-            <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
+            <h6>Customer Care</h6>
+            <ul class=" in">
+              <li><a href="{{route('home.about')}}">The Company</a></li>
+              <li><a href="{{route('home.support')}}">Support</a></li>
+              <li><a href="{{route('home.shippingpolicy')}}">Shipping Policy</a></li>
+              <li><a href="{{route('home.privacypolicy')}}">Privacy Policy</a></li>
+			  <li><a href="{{route('home.contact')}}">Contact Us</a></li>
+            </ul>    
           </div>
           
-          <div class="col-md-3 footer-middle-in">
-            <h6>Information</h6>
-            <ul class=" in">
-              <li><a href="404.html">About</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="contact.html">Site Map</a></li>
-            </ul>
-            <ul class="in in1">
-              <li><a href="#">Order History</a></li>
-              <li><a href="wishlist.html">Wish List</a></li>
-              <li><a href="login.html">Login</a></li>
-            </ul>
+          <div class="col-md-6 footer-middle-in">
+            <a href="index.html"><img src="images/logo/logo1.png" alt="" width="300" height="100" style="margin: 10px 100px;" align="center"></a>
+            <h3 style="color: #FFF; margin: 10px 150px;">Change is for better!!</h3>
+            <p>Viscous.co is established and prestigious companies that aim to develop the up-coming era of modern technology.Our services are trusted by driving producers, pivotal planners, creators, scholars, researchers and practitioners.</p>
+   
             <div class="clearfix"></div>
           </div>
-          <div class="col-md-3 footer-middle-in">
-            <h6>Tags</h6>
-            <ul class="tag-in">
-              <li><a href="#">Lorem</a></li>
-              <li><a href="#">Sed</a></li>
-              <li><a href="#">Ipsum</a></li>
-              <li><a href="#">Contrary</a></li>
-              <li><a href="#">Chunk</a></li>
-              <li><a href="#">Amet</a></li>
-              <li><a href="#">Omnis</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3 footer-middle-in">
-            <h6>Newsletter</h6>
-            <span>Sign up for News Letter</span>
-              <form>
-                <input type="text" value="Enter your E-mail" onFocus="this.value='';" onBlur="if (this.value == '') {this.value ='Enter your E-mail';}">
-                <input type="submit" value="Subscribe"> 
-              </form>
+			<div class="col-md-3 footer-middle-in">
+            <h6>Social Links</h6>
+        		<a href="https://twitter.com/viscousco"><i class="fa fa-twitter-square" style="font-size:24px; color:#FFF;"></i></a>
+				&nbsp;
+				<a href="https://www.instagram.com/viscous.co/"><i class="fa fa-google-plus" style="font-size:24px; color:#FFF;"></i></a>
+				&nbsp;
+				<a href="https://www.facebook.com/viscous.co/"><i class="fa fa-facebook-square" style="font-size:24px; color:#FFF;"></i></a>
+			<p>For any queries you can call us at: <br/>
+			+92 341 2703848</p>
           </div>
           <div class="clearfix"> </div>
         </div>
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <ul class="footer-bottom-top">
-            <li><a href="#"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
-            <li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
-            <li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
-          </ul>
-          <p class="footer-class">&copy; 2016 Shopin. All Rights Reserved |  </p>
+          <p class="footer-class" align="center">&copy; 2017 Viscous.co. All Rights Reserved</p>
           <div class="clearfix"> </div>
         </div>
       </div>

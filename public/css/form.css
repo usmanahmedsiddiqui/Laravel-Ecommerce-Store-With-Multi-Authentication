@@ -19,7 +19,6 @@ section.sky-form{
 	display: block;
 }
 
-/* radios and checkboxes */
 .sky-form .radio,.sky-form .checkbox {
 	outline: none;
 	border: none;

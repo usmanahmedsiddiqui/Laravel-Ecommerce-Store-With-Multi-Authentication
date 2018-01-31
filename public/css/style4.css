@@ -55,7 +55,7 @@ font-family:'Oxygen-Regular';
 	font-size: 2em;
 	font-style: italic;
 	text-indent: 5px;
-	color: #F67777;	
+	color: #FFF;	
 	font-family: 'Ubuntu-Regular';
 	-webkit-animation: rotateWordsSecond 18s ease-in infinite 0s;
 	-moz-animation: rotateWordsSecond 18s ease-in infinite 0s;
@@ -168,7 +168,7 @@ font-family:'Oxygen-Regular';
     25% { opacity: 0; }
     100% { opacity: 0; }
 }
-/*--responsive--*/
+
 @media(max-width: 1280px){
 .rw-sentence > span:first-child {
     font-size: 2.6em;
