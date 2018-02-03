@@ -8,7 +8,7 @@ Viscous - Login
 
 <div class="banner-top">
 	<div class="container">
-		<h1>Login</h1>
+		<h1>Login Form</h1>
 		<h2><a href="{{route('product.index')}}">Home</a><label>/</label>Login</h2>
 	</div>
 </div>
